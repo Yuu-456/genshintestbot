@@ -5589,11 +5589,11 @@ async def start(event):
     elif command in Oganesson:
         velement = 'oganesson'
     file = perodic_table[velement]["bohr_model_image"]
-    await client.send_file(event.sender_id, file = file, caption = str(perodic_table[velement]['name'])+str(perodic_table[velement]['number'])
+    await client.send_file(event.sender_id, file = file, caption = "`Atomic Name:- "str(perodic_table[velement]['name'])+"\nAtomic Number:- "+str(perodic_table[velement]['number']+"\nSymbol:- "+str(perodic_table[velement]['symbol']+"\nAtomic Mass- "+str(perodic_table[velement]['atomic_mass']+"\nMelting - "+str(perodic_table[velement]['melt']+"K"+"\nBoiling - "+str(perodic_table[velement]['boil']+"K"+"\nDensity - "+str(perodic_table[velement]['density'])
         ,
         buttons=[
         [
-            Button.url(perodic_table[velement]['name'], perodic_table[velement]['source'])
+            Button.url("More about"+perodic_table[velement]['name'], perodic_table[velement]['source'])
         ]
      ]
     )
