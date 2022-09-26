@@ -5244,7 +5244,7 @@ async def start(event):
     Neon = 'Neon', 'neon', 'ne', 'Ne', '10'
     Sodium = 'Sodium', 'sodium', 'Na', 'na', '11',
     Magnesium = 'Magnesium', 'magnesium', 'mg', 'Mg', '12'
-    Aluminum = 'Aluminum', 'aluminum', 'al', 'Al', '13',
+    Aluminium = 'Aluminum', 'aluminum', 'al', 'Al', '13', 'aluminium', 'Aluminium'
     Silicon = 'Silicon', 'silicon', 'si', 'Si', '14'
     Phosphorus = 'Phosphorus', 'phosphorus', 'P', 'p', '15'
     Sulfur = 'Sulfur', 'sulfur', 'S', 's', '16'
@@ -5376,8 +5376,8 @@ async def start(event):
         velement = 'sodium'
     elif command in Magnesium:
         velement = 'magnesium'
-    elif command in Aluminum:
-        velement = 'aluminum'
+    elif command in Aluminium:
+        velement = 'aluminium'
     elif command in Silicon:
         velement = 'silicon'
     elif command in Phosphorus:
