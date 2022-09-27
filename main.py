@@ -5589,7 +5589,7 @@ async def start(event):
     elif command in Oganesson:
         velement = 'oganesson'
     file = perodic_table[velement]["bohr_model_image"]
-    await client.send_file(event.sender_id, file = file, caption = "`Atomic Name:- "+str(perodic_table[velement]['name'])+"\nAtomic Number:- "+str(perodic_table[velement]['number'])+"\nSymbol:- "+str(perodic_table[velement]['symbol'])+"\nAtomic Mass- "+str(perodic_table[velement]['atomic_mass'])+"\nMelting - "+str(perodic_table[velement]['melt'])+"\nBoiling - "+str(perodic_table[velement]['boil'])+"\nDensity - "+str(perodic_table[velement]['density'])+"\nMolar Heat- "+str(perodic_table[velement]['molar_heat'])+"\nPeriod -"+str(perodic_table[velement]['period'])+"\nPhase -"+str(perodic_table[velement]['phase'])
+    await client.send_file(event.sender_id, file = file, caption = "`Atomic Name: "+str(perodic_table[velement]['name'])+"\nAtomic Number: "+str(perodic_table[velement]['number'])+"\nSymbol: "+str(perodic_table[velement]['symbol'])+"\nAtomic Mass: "+str(perodic_table[velement]['atomic_mass'])+"\nMelting: "+str(perodic_table[velement]['melt'])+"\nBoiling: "+str(perodic_table[velement]['boil'])+"\nDensity: "+str(perodic_table[velement]['density'])+"\nMolar Heat: "+str(perodic_table[velement]['molar_heat'])+"\nPeriod: "+str(perodic_table[velement]['period'])+"\nPhase: "+str(perodic_table[velement]['phase'])+"`"
         ,
         buttons=[
         [
