@@ -5590,7 +5590,7 @@ async def start(event):
     elif command in Oganesson:
         velement = 'oganesson'
     elif command == "/start":
-      await client.send_file(event.sender_id, file=start_pic, caption = "Hello, I am Peridoc table bot\n\nAlive and ready to help you in Chemistry\n\nJust send me any \n1} Atomic Name\n2} Atomic Number\n3} Atomic Symbol\nAnd I will get i all the data\n\nMade by[AYATO](https://t.me/SILVER_KING)")
+      await client.send_file(event.sender_id, file=start_pic, caption = "Hello, I am Peridoc table bot\n\nAlive and ready to help you in Chemistry\n\nJust send me any \n1} Atomic Name\n2} Atomic Number\n3} Atomic Symbol\nAnd I will get i all the data\n\nMade by: [AYATO](https://t.me/SILVER_KING)")
     
     file = perodic_table[velement]["bohr_model_image"]
     await event.respond(event.sender_id, file = file, caption = "`Atomic Name: "+str(perodic_table[velement]['name'])+"\nAtomic Number: "+str(perodic_table[velement]['number'])+"\nSymbol: "+str(perodic_table[velement]['symbol'])+"\nAtomic Mass: "+str(perodic_table[velement]['atomic_mass'])+"\nMelting: "+str(perodic_table[velement]['melt'])+"\nBoiling: "+str(perodic_table[velement]['boil'])+"\nDensity: "+str(perodic_table[velement]['density'])+"\nMolar Heat: "+str(perodic_table[velement]['molar_heat'])+"\nPeriod: "+str(perodic_table[velement]['period'])+"\nPhase: "+str(perodic_table[velement]['phase'])+"\nCategory: "+str(perodic_table[velement]['category'])+"\nShells: "+str(perodic_table[velement]['shells'])+"\n\nConfig: "+str(perodic_table[velement]['electron_configuration'])+"`"
