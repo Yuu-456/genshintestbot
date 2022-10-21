@@ -33,7 +33,10 @@ async def start(event):
     sender = await event.get_sender()
     await client.send_message(event.sender_id, 'Me alive what about u')
 
-
+@client.on(events.NewMessage(pattern='/build'))
+async def start(event):
+    sender = await event.get_sender()
+    await client.send_message(event.sender_id,"huihui")
 
 client.start()
 client.run_until_disconnected()
