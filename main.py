@@ -27,15 +27,38 @@ logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s'
 
                     level=logging.WARNING)
 
+test_image = 'https://telegra.ph/file/a71d3d2cfd43aee7bf388.jpg'
 
 @client.on(events.NewMessage(pattern='/start'))
 async def start(event):
     sender = await event.get_sender()
     await client.send_message(event.sender_id, 'Me alive what about u')
 
-@client.on(events.NewMessage(pattern=r'(?i).*heck'))
+@client.on(events.NewMessage(pattern='/login'))
 async def handler(event):
-    await event.reply("working")
+    list_of_words = event.message.text.split(" ")
+    uid = list_of_words[1]
+    await event.reply("Logged in as "+str(uid))
+
+@client.on(events.NewMessage(pattern='/mycharacter'))
+async def handler(event):
+    await client.send_file(event.sender_id, file = test_image, caption = 'select which character u want to see'
+         ,
+         buttons=[
+                  [
+                     Button.inline('1', 'first_character'),
+                     Button.inline('2', 'second_character'),
+                     Button.inline('3', 'third_character'),
+                     Button.inline('4', 'fourth_character')
+                  ],
+                  [
+                     Button.inline('5', 'fifth_character'),
+                     Button.inline('6', 'sixth_character'),
+                     Button.inline('7', 'seventh_character'),
+                     Button.inline('8', 'eighth_character')
+                  ]
+                 ]
+                )
 
 @client.on(events.NewMessage(pattern='/build'))
 async def start(event):
