@@ -59,7 +59,7 @@ async def handler(event):
 
 @client.on(events.NewMessage(pattern='/mycharacter'))
 async def handler(event):
-    await client.send_file(event.sender_id, file = test_image, caption = 'select which character u want to see'
+    await client.send_file(event.chat_id, file = test_image, caption = 'select which character u want to see'
          ,
          buttons=[
                   [
@@ -76,6 +76,46 @@ async def handler(event):
                   ]
                  ]
                 )
+
+@client.on(events.CallbackQuery(data='first_character'))
+async def approvecb(event):
+     await client.send_file(event.chat_id, firstcharacter)
+     await client.delete_messages(event.chat_id, event.message_id)
+
+@client.on(events.CallbackQuery(data='second_character'))
+async def approvecb(event):
+     await client.send_file(event.chat_id, secondcharacter)
+     await client.delete_messages(event.chat_id, event.message_id)
+
+@client.on(events.CallbackQuery(data='third_character'))
+async def approvecb(event):
+     await client.send_file(event.chat_id, thirdcharacter)
+     await client.delete_messages(event.chat_id, event.message_id)
+
+@client.on(events.CallbackQuery(data='fourth_character'))
+async def approvecb(event):
+     await client.send_file(event.chat_id, fourthcharacter)
+     await client.delete_messages(event.chat_id, event.message_id)
+
+@client.on(events.CallbackQuery(data='fifth_character'))
+async def approvecb(event):
+     await client.send_file(event.chat_id, fifthcharacter)
+     await client.delete_messages(event.chat_id, event.message_id)
+
+@client.on(events.CallbackQuery(data='sixth_character'))
+async def approvecb(event):
+     await client.send_file(event.chat_id, sixthcharacter)
+     await client.delete_messages(event.chat_id, event.message_id)
+
+@client.on(events.CallbackQuery(data='seventh_character'))
+async def approvecb(event):
+     await client.send_file(event.chat_id, seventhcharacter)
+     await client.delete_messages(event.chat_id, event.message_id)
+
+@client.on(events.CallbackQuery(data='eighth_character'))
+async def approvecb(event):
+     await client.send_file(event.chat_id, eighthcharacter)
+     await client.delete_messages(event.chat_id, event.message_id)
 
 @client.on(events.NewMessage(pattern='/build'))
 async def start(event):
