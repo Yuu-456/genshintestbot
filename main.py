@@ -1,37 +1,4 @@
-import os
-from telethon.tl.functions.channels import GetParticipantsRequest
-from telethon.tl.types import ChannelParticipantsSearch
-from time import sleep
-from telethon.tl.types import MessageEntityCode
-from telethon import TelegramClient, events, Button
-import telethon.sync #lol copied from docs
-import asyncio
-import logging
-import asyncio
-from telethon import events
-from telethon.errors import UserNotParticipantError
-from telethon.tl.functions.channels import GetParticipantRequest
-from telethon.tl.types import ChannelParticipantAdmin
-from telethon.tl.types import ChannelParticipantCreator
-
-API_ID = os.environ.get('API_ID', None)
-API_HASH = os.environ.get('API_HASH', None)
-TOKEN = os.environ.get('TOKEN', None)
-
-api_id = API_ID
-api_hash = API_HASH
-bot_token = TOKEN
-
-
-client = TelegramClient('aucbout', api_id, api_hash).start(bot_token=bot_token) #i dont really understand it lol but without this bot wont work
-
-logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s', #copy pasted from telethon docs lol..... so usually it logs error
-                    level=logging.WARNING)
-
-
-
-
-null = "null"
+ = "null"
 start_pic = 'https://avatarfiles.alphacoders.com/164/164360.jpg'
 
 perodic_table = {
@@ -5592,7 +5559,7 @@ async def start(event):
     elif command == "/start":
       await client.send_file(event.sender_id, file=start_pic, caption = "Hello, I am Peridoc table bot\n\nAlive and ready to help you in Chemistry\n\nJust send me any \n1} Atomic Name\n2} Atomic Number\n3} Atomic Symbol\nAnd I will get i all the data\n\nMade by: [AYATO](https://t.me/SILVER_KING)")
     
-    file = perodic_table[velement]["bohr_model_image"]
+    file = "]
     await client.send_file(event.sender_id, file = file, caption = "`Atomic Name: "+str(perodic_table[velement]['name'])+"\nAtomic Number: "+str(perodic_table[velement]['number'])+"\nSymbol: "+str(perodic_table[velement]['symbol'])+"\nAtomic Mass: "+str(perodic_table[velement]['atomic_mass'])+"\nMelting: "+str(perodic_table[velement]['melt'])+"\nBoiling: "+str(perodic_table[velement]['boil'])+"\nDensity: "+str(perodic_table[velement]['density'])+"\nMolar Heat: "+str(perodic_table[velement]['molar_heat'])+"\nPeriod: "+str(perodic_table[velement]['period'])+"\nPhase: "+str(perodic_table[velement]['phase'])+"\nCategory: "+str(perodic_table[velement]['category'])+"\nShells: "+str(perodic_table[velement]['shells'])+"\n\nConfig: "+str(perodic_table[velement]['electron_configuration'])+"`"
         ,
         buttons=[
@@ -5608,6 +5575,4 @@ async def start(event):
 
         
 
-client.start()
-client.run_until_disconnected()
 
