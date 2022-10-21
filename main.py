@@ -33,6 +33,10 @@ async def start(event):
     sender = await event.get_sender()
     await client.send_message(event.sender_id, 'Me alive what about u')
 
+@client.on(events.NewMessage(pattern=r'(?i).*heck'))
+async def handler(event):
+    await event.reply("working")
+
 @client.on(events.NewMessage(pattern='/build'))
 async def start(event):
     chat = await event.get_chat()
