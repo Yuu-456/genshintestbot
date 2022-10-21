@@ -42,8 +42,8 @@ async def start(event):
     chat = await event.get_chat()
     list_of_words = event.message.text.split(" ")
     character_name = list_of_words[1]
-    kazuha = r'(?i).*kazuha'
-    if character_name in kazuha:
+    pattern = r'(?i).*kazuha'
+    if character_name in pattern:
         await client.send_message(event.chat_id,"huihui")
 
 client.start()
