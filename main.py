@@ -36,7 +36,10 @@ async def start(event):
 @client.on(events.NewMessage(pattern='/build'))
 async def start(event):
     chat = await event.get_chat()
-    await client.send_message(event.chat_id,"huihui")
+    list_of_words = event.message.text.split(" ")
+    character_name = list_of_words[1]
+    if character_name == 'kazuha':
+        await client.send_message(event.chat_id,"huihui")
 
 client.start()
 client.run_until_disconnected()
