@@ -35,7 +35,7 @@ async def start(event):
 
 @client.on(events.NewMessage(pattern='/build'))
 async def start(event):
-    sender = await event.get_sender()
+    chat = await event.get_chat()
     await client.send_message(event.chat_id,"huihui")
 
 client.start()
