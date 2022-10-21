@@ -29,6 +29,23 @@ logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s'
 
 test_image = 'https://telegra.ph/file/a71d3d2cfd43aee7bf388.jpg'
 
+firstcharacter = 'https://telegra.ph/file/3239fa6a6b0ad4da03b78.jpg'
+
+secondcharacter = 'https://telegra.ph/file/c54a2d5a67f6c96ceada0.jpg'
+
+thirdcharacter = 'https://telegra.ph/file/df286deeed0cc82f481b9.jpg'
+
+fourthcharacter = 'https://telegra.ph/file/f405812782f8748e7d636.jpg'
+
+fifthcharacter = 'https://telegra.ph/file/e1c18bda34dba94e9d17e.jpg'
+
+sixthcharacter = 'https://telegra.ph/file/c2224b650b098df5b7870.jpg'
+
+seventhcharacter = 'https://telegra.ph/file/2ffd3f840c50aafff9229.jpg'
+
+eighthcharacter = 'https://telegra.ph/file/5e033bdb03c3dd319547c.jpg'
+
+
 @client.on(events.NewMessage(pattern='/start'))
 async def start(event):
     sender = await event.get_sender()
