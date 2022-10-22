@@ -13,6 +13,10 @@ from telethon.errors import UserNotParticipantError
 from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin
 from telethon.tl.types import ChannelParticipantCreator
+import genshinstats as gs
+
+gs.set_cookie_auto()
+
 
 API_ID = os.environ.get('API_ID', None)
 API_HASH = os.environ.get('API_HASH', None)
@@ -53,9 +57,14 @@ async def start(event):
 
 @client.on(events.NewMessage(pattern='/login'))
 async def handler(event):
+    uid = 849166888
+    data = gs.get_user_stats(uid)
+    total_characters = len(data['characters'])
+    text = ('user "sadru" has a total of', total_characters, 'characters')
     list_of_words = event.message.text.split(" ")
     uid = list_of_words[1]
     await event.reply("Logged in as "+str(uid))
+    await event.reply(text)
 
 @client.on(events.NewMessage(pattern='/mycharacter'))
 async def handler(event):
@@ -125,6 +134,9 @@ async def start(event):
     pattern = r'(?i).*kazuha'
     if character_name in pattern:
         await client.send_message(event.chat_id,"huihui")
+
+
+
 
 client.start()
 client.run_until_disconnected()
