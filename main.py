@@ -104,7 +104,8 @@ async def handler(event):
     genshinid = list_of_words[1]
     user = await genshinclient.fetch_user(genshinid)
     await event.reply("Logged in as "+str(genshinid))
-    await event.reply(user)
+    print (user)
+    await event.reply(user.text)
 
 @client.on(events.NewMessage(pattern='/mycharacter'))
 async def handler(event):
