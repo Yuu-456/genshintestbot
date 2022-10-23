@@ -187,23 +187,10 @@ if __name__ == '__main__':
         print("Connected to the database")
 
         # Command that creates the "oders" table 
-        sqllegend_command = """CREATE TABLE IF NOT EXISTS Legendary( 
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            msg_id VARCHAR(200),
-            type VARCHAR(200),
-            seller_id VARCHAR(200),
-            seller_user VARCHAR(200),
-            pname VARCHAR(200),
-            nature VARCHAR(200),
-            HP VARCHAR(200),
-            Atk VARCHAR(200),
-            Def VARCHAR(200),
-            Spa VARCHAR(200),
-            Spd VARCHAR(200),
-            Spe VARCHAR(200),
-            ttl VARCHAR(200),
-            base VARCHAR(200));"""
-        crsr.execute(sqllegend_command)
+        sqlgenshin_command = """CREATE TABLE IF NOT EXISTS Legendary( 
+            user_id VARCHAR(200),
+            genshin_id VARCHAR(200));"""
+        crsr.execute(sqlgenshin_command)
         print("Legendary table is ready")
 
         print("Bot Started")
