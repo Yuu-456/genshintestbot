@@ -46,7 +46,7 @@ async def insert(event):
       list_of_words = event.message.text.split(" ")
       name = list_of_words[1]
       post_dict = {"User_id" : SENDER, "GENSHIN_ID" : name}
-      userdata.insert_one(post_dict)
+      data.insert_one(post_dict)
 
 
 if __name__ == '__main__':
