@@ -2,3 +2,4 @@ telethon
 genshinstats
 enka.py
 configparser
+pymongo
