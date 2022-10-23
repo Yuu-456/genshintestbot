@@ -15,7 +15,6 @@ from telethon.tl.types import ChannelParticipantAdmin
 from telethon.tl.types import ChannelParticipantCreator
 import genshinstats as gs
 from enkapy import Enka
-import sqlite3
 
 
 
@@ -25,9 +24,9 @@ TOKEN = os.environ.get('TOKEN', None)
 api_id = API_ID
 api_hash = API_HASH
 bot_token = TOKEN
-url = mongodb+srv://ayato:Ayato123@genshin.4e7yi5d.mongodb.net/?retryWrites=true&w=majorityv
-db_name = genshinbot
-collection_name = userdata
+url = "mongodb+srv://ayato:Ayato123@genshin.4e7yi5d.mongodb.net/?retryWrites=true&w=majorityv"
+db_name = "genshinbot"
+collection_name = "userdata"
 cluster = Mongo client(url)
 
 client = TelegramClient('aucbout', api_id, api_hash).start(bot_token=bot_token) #i dont really understand it lol but without this bot wont work
