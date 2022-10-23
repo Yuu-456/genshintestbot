@@ -14,8 +14,8 @@ from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin
 from telethon.tl.types import ChannelParticipantCreator
 import genshinstats as gs
+from enkapy import Enka
 
-gs.set_cookie_auto()
 
 
 API_ID = os.environ.get('API_ID', None)
@@ -26,6 +26,8 @@ api_hash = API_HASH
 bot_token = TOKEN
 
 client = TelegramClient('aucbout', api_id, api_hash).start(bot_token=bot_token) #i dont really understand it lol but without this bot wont work
+
+genshinclient = Enka()
 
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s', #copy pasted from telethon docs lol..... so usually it logs error
 
@@ -54,13 +56,48 @@ eighthcharacter = 'https://telegra.ph/file/5e033bdb03c3dd319547c.jpg'
 async def start(event):
     sender = await event.get_sender()
     await client.send_message(event.sender_id, 'Me alive what about u')
+    await genshinclient.load_lang()
+    user = await genshinclient.fetch_user(104267816)
+    print(f"Nickname: {user.player.nickname}")
+    print(f"Level: {user.player.level}")
+    print(f'Signature: {user.player.signature}')
+    print(f'World level:{user.player.worldLevel}')
+    print(f'Abyss: {user.player.towerFloorIndex}-{user.player.towerLevelIndex}')
+    # fetch first character
+    character = user.characters[0]
+    print(f'Name: {character.name}')
+    print(f'Ascension: {character.ascension}')
+    print(f'Level: {character.level}')
+    print(f'Exp: {character.experience}')
+    print('Weapon:')
+    weapon = character.weapon
+    print(f'\tName: {weapon.name}')
+    print(f'\tLevel: {weapon.level}')
+    print(f'\tRefine: {weapon.refine}')
+    print(f'\tStar level: {weapon.rank}')
+
+    print('Constellations:')
+    for constellation in character.constellations:
+        if constellation.activated:
+            print(f'\t{constellation.name} Activated')
+    print('Skills:')
+    for skill in character.skills:
+        if skill.type == 0:
+            print(f'\tNormal skill {skill.name}, level:{skill.level}')
+        elif skill.type == 1:
+            print(f'\tElemental skill {skill.name}, level:{skill.level}')
+        elif skill.type == 2:
+            print(f'\tElemental burst {skill.name}, level:{skill.level}')
+    print('Artifacts:')
+    for artifact in character.artifacts:
+        print(f'\t{artifact.set_name} {artifact.name}:')
+        print(f'\t{artifact.main_stat.prop}:{artifact.main_stat.value}')
+        for sub_stats in artifact.sub_stats:
+            print(f'\t\t{sub_stats.prop}:{sub_stats.value}')
+
 
 @client.on(events.NewMessage(pattern='/login'))
 async def handler(event):
-    uid = 849166888
-    data = gs.get_user_stats(uid)
-    total_characters = len(data['characters'])
-    text = ('user "sadru" has a total of', total_characters, 'characters')
     list_of_words = event.message.text.split(" ")
     uid = list_of_words[1]
     await event.reply("Logged in as "+str(uid))
@@ -136,6 +173,12 @@ async def start(event):
         await client.send_message(event.chat_id,"huihui")
 
 
+
+
+
+
+
+    
 
 
 client.start()
