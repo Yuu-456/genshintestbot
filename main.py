@@ -57,7 +57,7 @@ async def start(event):
     sender = await event.get_sender()
     await client.send_message(event.sender_id, 'Me alive what about u')
     await genshinclient.load_lang()
-    user = await genshinclient.fetch_user(104267816)
+    user = await genshinclient.fetch_user(849166888)
     print(f"Nickname: {user.player.nickname}")
     print(f"Level: {user.player.level}")
     print(f'Signature: {user.player.signature}')
