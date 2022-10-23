@@ -174,12 +174,30 @@ async def start(event):
 
 
 
+if __name__ == '__main__':
+    try:
+        print("Initializing Database...")
+        # Connect to local database
+        db_name = 'Legendary.db' # Insert the database name. Database is the folder
+        conn = sqlite3.connect(db_name, check_same_thread=False)
+        # Create the cursor
+        # The cursor is an instance using which you can invoke methods that execute SQLite statements, fetch data from the result sets of the queries.
+        crsr = conn.cursor() 
+        print("Connected to the database")
+
+        # Command that creates the "oders" table 
+        sqllegend_command = """CREATE TABLE IF NOT EXISTS Legendary( 
+            id INTEGER PRIMARY KEY AUTOINCREMENT
 
 
 
+        crsr.execute(sqlshiny_command)
+        print("Shiny table is ready")
+        
 
-    
+        print("Bot Started")
+        client.run_until_disconnected()
 
+    except Exception as error:
+        print('Cause: {}'.format(error))
 
-client.start()
-client.run_until_disconnected()
