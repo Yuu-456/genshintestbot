@@ -24,8 +24,8 @@ api_id = API_ID
 api_hash = API_HASH
 bot_token = TOKEN
 url = "mongodb+srv://telegramgenshindatabase:telegramgenshindatabase@genshinbot.kne6n9m.mongodb.net/?retryWrites=true&w=majority"
-db_name = genshinbot
-collection_name = userdata
+db_name = "genshinbot"
+collection_name = "userdata"
 cluster = MongoClient(url)
 
 client = TelegramClient('aucbout', api_id, api_hash).start(bot_token=bot_token) #i dont really understand it lol but without this bot wont work
@@ -46,7 +46,7 @@ async def insert(event):
       list_of_words = event.message.text.split(" ")
       name = list_of_words[1]
       post_dict = {"User_id" : SENDER, "GENSHIN_ID" : name}
-      
+      userdata.insert_one(post_dict)
 
 
 if __name__ == '__main__':
