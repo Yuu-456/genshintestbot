@@ -105,10 +105,10 @@ async def handler(event):
     user = await genshinclient.fetch_user(genshinid)
     await event.reply("Logged in as "+str(genshinid))
     user_nickname = (f"Nickname: {user.player.nickname}")
-    user_level = (f"Level: {user.player.level}")
+    user_level = (f"Adventure Rank: {user.player.level}")
     user_worldlevel = (f'World level:{user.player.worldLevel}')
     user_abyss = (f'Abyss: {user.player.towerFloorIndex}-{user.player.towerLevelIndex}')
-    await event.reply("Nickname : {}\nAdventer Rank : {}\nWorld_level : {}\nAbyss : {}".format(user_nickname, user_level, user_worldlevel, user_abyss))
+    await event.reply("{}\n{}\n{}\n{}".format(user_nickname, user_level, user_worldlevel, user_abyss))
 
 @client.on(events.NewMessage(pattern='/mycharacter'))
 async def handler(event):
