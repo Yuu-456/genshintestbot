@@ -18,6 +18,8 @@ import genshinstats as gs
 from enkapy import Enka
 import sqlite3
 
+config = configparser.ConfigParser()
+config.read('config.ini')
 
 
 API_ID = os.environ.get('API_ID', None)
