@@ -105,7 +105,7 @@ async def handler(event):
     user = await genshinclient.fetch_user(genshinid)
     text = (f"Nickname: {user.player.nickname}")
     text += (f"Level: {user.player.level}")
-    await event.reply("Logged in as "+str(uid))
+    await event.reply("Logged in as "+str(genshinid))
     await event.reply(text)
 
 @client.on(events.NewMessage(pattern='/mycharacter'))
