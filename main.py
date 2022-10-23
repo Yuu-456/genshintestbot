@@ -24,8 +24,8 @@ api_id = API_ID
 api_hash = API_HASH
 bot_token = TOKEN
 url = "mongodb+srv://telegramgenshindatabase:telegramgenshindatabase@genshinbot.kne6n9m.mongodb.net/?retryWrites=true&w=majority"
-db_name = "genshinbot"
-collection_name = "userdata"
+db_name = genshinbot
+collection_name = userdata
 cluster = MongoClient(url)
 
 client = TelegramClient('aucbout', api_id, api_hash).start(bot_token=bot_token) #i dont really understand it lol but without this bot wont work
@@ -37,7 +37,16 @@ logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s'
                     level=logging.WARNING)
 
 
-
+@client.on(events.NewMessage(pattern="(?i)/insert"))
+async def insert(event):
+      # Get the sender of the message
+      sender = await event.get_sender()
+      SENDER = sender.id
+      # Get the text of the user AFTER the /insert command and convert it to a list (we are splitting by the SPACE " " simbol)
+      list_of_words = event.message.text.split(" ")
+      name = list_of_words[1]
+      post_dict = {"User_id" : SENDER, "GENSHIN_ID" : name}
+      
 
 
 if __name__ == '__main__':
@@ -46,6 +55,7 @@ if __name__ == '__main__':
         # Connect to local database
         db = cluster[db_name]
         data = db[collection_name]
+        print("bot started")
         client.run_until_disconnected()
 
     except Exception as error:
