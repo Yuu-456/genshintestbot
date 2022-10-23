@@ -26,7 +26,7 @@ bot_token = TOKEN
 url = "mongodb+srv://telegramgenshindatabase:telegramgenshindatabase@genshinbot.kne6n9m.mongodb.net/?retryWrites=true&w=majority"
 db_name = "genshinbot"
 collection_name = "userdata"
-cluster = Mongoclient(url)
+cluster = MongoClient(url)
 
 client = TelegramClient('aucbout', api_id, api_hash).start(bot_token=bot_token) #i dont really understand it lol but without this bot wont work
 
