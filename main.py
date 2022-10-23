@@ -205,45 +205,6 @@ if __name__ == '__main__':
             base VARCHAR(200));"""
         crsr.execute(sqllegend_command)
         print("Legendary table is ready")
-        
-        sqlnon_command = """CREATE TABLE IF NOT EXISTS Non_Legendary( 
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            msg_id VARCHAR(200),
-            type VARCHAR(200),
-            seller_id VARCHAR(200),
-            seller_user VARCHAR(200),
-            pname VARCHAR(200),
-            nature VARCHAR(200),
-            HP VARCHAR(200),
-            Atk VARCHAR(200),
-            Def VARCHAR(200),
-            Spa VARCHAR(200),
-            Spd VARCHAR(200),
-            Spe VARCHAR(200),
-            ttl VARCHAR(200),
-            base VARCHAR(200));"""
-        crsr.execute(sqlnon_command)
-        print("Non - Legendary table is ready")
-        
-        sqlshiny_command = """CREATE TABLE IF NOT EXISTS Shiny( 
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            msg_id VARCHAR(200),
-            type VARCHAR(200),
-            seller_id VARCHAR(200),
-            seller_user VARCHAR(200),
-            pname VARCHAR(200),
-            nature VARCHAR(200),
-            HP VARCHAR(200),
-            Atk VARCHAR(200),
-            Def VARCHAR(200),
-            Spa VARCHAR(200),
-            Spd VARCHAR(200),
-            Spe VARCHAR(200),
-            ttl VARCHAR(200),
-            base VARCHAR(200));"""
-        crsr.execute(sqlshiny_command)
-        print("Shiny table is ready")
-        
 
         print("Bot Started")
         client.run_until_disconnected()
