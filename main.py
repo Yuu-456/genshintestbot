@@ -56,6 +56,7 @@ async def insert(event):
       if list_of_words[1].isnumeric():
         await genshinclient.load_lang()
         user = await genshinclient.fetch_user(list_of_words[1])
+        print(user)
         user_nickname = (f"Nickname: {user.player.nickname}")
         user_level = (f"Adventure Rank: {user.player.level}")
         user_worldlevel = (f'World level:{user.player.worldLevel}')
