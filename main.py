@@ -178,7 +178,7 @@ if __name__ == '__main__':
     try:
         print("Initializing Database...")
         # Connect to local database
-        db_name = 'Legendary.db' # Insert the database name. Database is the folder
+        db_name = 'genshin.db' # Insert the database name. Database is the folder
         conn = sqlite3.connect(db_name, check_same_thread=False)
         # Create the cursor
         # The cursor is an instance using which you can invoke methods that execute SQLite statements, fetch data from the result sets of the queries.
@@ -186,13 +186,15 @@ if __name__ == '__main__':
         print("Connected to the database")
 
         # Command that creates the "oders" table 
-        sqllegend_command = """CREATE TABLE IF NOT EXISTS Legendary( 
-            id INTEGER PRIMARY KEY AUTOINCREMENT
+        sqlgenshin_command = """CREATE TABLE IF NOT EXISTS genshin( 
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id VARCHAR(200),
+            genshin_id VARCHAR(15)"""
 
 
 
-        crsr.execute(sqlshiny_command)
-        print("Shiny table is ready")
+        crsr.execute(sqlgenshin_command)
+        print("Genshin table is ready")
         
 
         print("Bot Started")
