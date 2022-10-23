@@ -61,7 +61,7 @@ async def insert(event):
         user_worldlevel = (f'World level:{user.player.worldLevel}')
         user_abyss = (f'Abyss: {user.player.towerFloorIndex}-{user.player.towerLevelIndex}')
         avatar_id = (f"Avtar id: {user.player.profilePicture}")
-        await event.reply("{}\nUID : {}\n{}\n{}\n{}\n\nIs this your id??".format(user_nickname, list_of_words[1], user_level, user_worldlevel, user_abyss)
+        await event.reply("{}\nUID : {}\n{}\n{}\n{}\n{}\n\nIs this your id??".format(user_nickname, list_of_words[1], user_level, user_worldlevel, avatar_id, user_abyss)
             ,
             buttons=[
             [
