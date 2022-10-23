@@ -64,7 +64,7 @@ async def start(event):
     print(f'World level:{user.player.worldLevel}')
     print(f'Abyss: {user.player.towerFloorIndex}-{user.player.towerLevelIndex}')
     # fetch first character
-    character = user.characters[0]
+    character = user.characters[1]
     print(f'Name: {character.name}')
     print(f'Ascension: {character.ascension}')
     print(f'Level: {character.level}')
