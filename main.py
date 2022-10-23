@@ -47,6 +47,28 @@ async def insert(event):
       name = list_of_words[1]
       post_dict = {"User_id" : SENDER, "GENSHIN_ID" : name}
       data.insert_one(post_dict)
+      
+@client.on(events.NewMessage(pattern="/login"))
+async def insert(event):
+      sender = await event.get_sender()
+      SENDER = sender.id
+      list_of_words = event.message.text.split(" ")
+      if list_of_words[1].isnumeric():
+        await genshinclient.load_lang()
+        user = await genshinclient.fetch_user(list_of_words[1])
+        user_nickname = (f"Nickname: {user.player.nickname}")
+        user_level = (f"Adventure Rank: {user.player.level}")
+        user_worldlevel = (f'World level:{user.player.worldLevel}')
+        user_abyss = (f'Abyss: {user.player.towerFloorIndex}-{user.player.towerLevelIndex}')
+        await event.reply("{}\n{}\n{}\n{}\n\nIs this your id??".format(user_nickname, user_level, user_worldlevel, user_abyss)
+            ,
+            buttons=[
+            [
+                Button.inline('Yes', 'yes'),
+                Button.inline('No', 'no')
+            ]
+        ]
+       )
 
 
 if __name__ == '__main__':
