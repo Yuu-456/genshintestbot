@@ -149,49 +149,26 @@ async def start(event):
 
 
 genshin_hutao_pic = "https://telegra.ph/file/33e42d51bdc315cc5b7f0.jpg"
-
 genshin_childe_pic = "https://telegra.ph/file/3f91bc97636870386266d.jpg"
-
 genshin_xiao_pic = "https://telegra.ph/file/e56c011c4fa8932469817.jpg"
-
 genshin_albedo_pic = "https://telegra.ph/file/65e5771355075258942c8.jpg"
-
 genshin_keqing_pic = "https://telegra.ph/file/049e0aa28c7ca2ec3ef98.jpg"
-
 genshin_zhongli_pic = "https://telegra.ph/file/ee73946879e8c73968f16.jpg"
-
 genshin_raiden_pic = "https://telegra.ph/file/d2eb680a2133afb6ad655.jpg"
-
 genshin_ayaka_pic = "https://telegra.ph/file/44e461b38a64b32cb266d.jpg"
-
 genshin_itto_pic = "https://telegra.ph/file/492ccfab03bba59db3896.jpg"
-
 genshin_Yae_pic = "https://telegra.ph/file/b9cfb0888fad568cb5911.jpg"
-
 genshin_yelan_pic = "https://telegra.ph/file/09939e2ed7ab8752788b5.jpg"
-
 genshin_tighnari_pic = "https://telegra.ph/file/339131cfe8a8060c12ee4.jpg"
-
 genshin_mona_pic = "https://telegra.ph/file/e8d7e69d2b24d65de1cf5.jpg"
-
 genshin_jean_pic = "https://telegra.ph/file/17bc0ad1eed044bf38cd9.jpg"
-
 genshin_kazuha_pic = "https://telegra.ph/file/038896cc4a768f45b82a7.jpg"
-
 genshin_klee_pic = "https://telegra.ph/file/80e3b4cbd0dd7cb6fc159.jpg"
-
 genshin_kokomi_pic = "https://telegra.ph/file/4a9108a393fd441bf0bd2.jpg"
-
 genshin_eula_pic = "https://telegra.ph/file/4f7cdad3a25ad86eee3eb.jpg"
-
 genshin_qiganyu_pic = "https://telegra.ph/file/7d4c1311bb19906a957a0.jpg"
-
 genshin_shenhe_pic = "https://telegra.ph/file/3b7652c13240ef1d35128.jpg"
-
 genshin_ayato_pic = "https://telegra.ph/file/7a46ed168385ee7998886.jpg"
-
 genshin_qiqi_pic = "https://telegra.ph/file/69d237fee4f6e56d70776.jpg"
-
 genshin_aether_pic = "https://telegra.ph/file/3a6b9051db7aab04dd379.jpg"
-
 genshin_aloy_pic = "https://telegra.ph/file/995feff9698e98d8b1127.jpg"
