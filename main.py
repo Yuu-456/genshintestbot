@@ -1,5 +1,4 @@
 import os
-import configparser
 from telethon.tl.functions.channels import GetParticipantsRequest
 from telethon.tl.types import ChannelParticipantsSearch
 from time import sleep
@@ -18,8 +17,6 @@ import genshinstats as gs
 from enkapy import Enka
 import sqlite3
 
-config = configparser.ConfigParser()
-config.read('config.ini')
 
 
 API_ID = os.environ.get('API_ID', None)
